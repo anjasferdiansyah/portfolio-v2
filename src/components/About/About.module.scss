@@ -1,0 +1,30 @@
+.about {
+  width: 100%;
+  background-color: #fefefe;
+  border-radius: 25px;
+
+  .container {
+    padding: 4rem;
+    .title {
+      padding: 2rem 0;
+      border-bottom: 1px solid #c7c7c7;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 3rem;
+    }
+    h1:nth-child(2) {
+      font-size: 3rem;
+      padding-top: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 3.5rem;
+    }
+    p {
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+    .description {
+      padding: 2rem 0;
+    }
+  }
+}
