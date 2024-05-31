@@ -38,7 +38,6 @@ export default function Home() {
       <main>
         <Hero ref={textWrapper} />
         <About />
-        <Skills />
       </main>
     </>
   );

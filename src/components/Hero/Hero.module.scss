@@ -3,7 +3,7 @@
   width: 100%;
 
   .container {
-    padding: var(--spacing-1);
+    padding: 4rem var(--spacing-1);
     height: 100%;
     margin-top: 8rem;
 
@@ -18,7 +18,7 @@
 
     .textWrapper {
       position: relative;
-      margin-top: 16rem;
+      margin-top: 18rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -28,10 +28,13 @@
         position: absolute;
         z-index: 10;
         top: -4rem;
-        right: 25%;
+        right: 30%;
         animation: spin 10s linear infinite;
-        @media screen and (max-width: 768px) {
-          right: 1rem;
+        @media screen and (max-width: 1040px) {
+          right: 2rem;
+        }
+        @media screen and (max-width: 450px) {
+          right: 4rem;
         }
       }
 
@@ -51,6 +54,7 @@
     .buttons {
       display: flex;
       margin-top: 2rem;
+      justify-content: space-between;
       gap: 1rem;
       button {
         background-color: transparent;

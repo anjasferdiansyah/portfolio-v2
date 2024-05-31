@@ -1,0 +1,29 @@
+.skills {
+  .container {
+    h1 {
+      font-weight: 400;
+    }
+    padding: 4rem 0;
+
+    .skillsContainer {
+      padding-top: 4rem;
+
+      .skillsList {
+        pointer-events: none;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        .skillCard {
+          pointer-events: none;
+          display: flex;
+          gap: 1rem;
+          background-color: whitesmoke;
+          border: 1px solid #c7c7c7;
+          padding: 10px 15px;
+          border-radius: 0.5rem;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

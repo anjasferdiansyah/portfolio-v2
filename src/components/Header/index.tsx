@@ -29,8 +29,8 @@ const Header = forwardRef(function index(props, ref: any) {
       <div className={style.logo}>
         <h1>Anjas.</h1>
       </div>
-      <div className={style.menu}>
-        <div ref={ref} className={style.boundary}></div>
+      <div ref={ref} className={style.menu}>
+        <div className={style.boundary}></div>
       </div>
     </header>
   );

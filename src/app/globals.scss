@@ -1,5 +1,5 @@
 :root {
-  --spacing-1: 4rem;
+  --spacing-1: calc(4rem + 30px);
 }
 
 * {
@@ -9,6 +9,6 @@
 }
 
 body {
-  background-color: #e0e0e0;
+  background-color: #f2f2f2;
   color: #121212;
 }

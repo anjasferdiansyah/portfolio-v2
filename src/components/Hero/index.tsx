@@ -31,8 +31,11 @@ const Hero = forwardRef(function index(props, ref: any) {
           </p>
         </div>
         <div className={style.buttons}>
-          <button className={neueMontreal.className}>Contact Me</button>
-          <button className={neueMontreal.className}>Resume</button>
+          <div>
+            <button className={neueMontreal.className}>Contact Me</button>
+            <button className={neueMontreal.className}>Resume</button>
+          </div>
+          <h1>(Scroll)</h1>
         </div>
       </div>
     </div>
