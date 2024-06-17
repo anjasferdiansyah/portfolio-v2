@@ -2,6 +2,11 @@ import React, { forwardRef } from "react";
 import style from "./Hero.module.scss";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { neueMontreal } from "@/fonts/font";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 const Hero = forwardRef(function index(props, ref: any) {
   return (
@@ -31,7 +36,7 @@ const Hero = forwardRef(function index(props, ref: any) {
           </p>
         </div>
         <div className={style.buttons}>
-          <div>
+          <div className={style.wrapper}>
             <button className={neueMontreal.className}>Contact Me</button>
             <button className={neueMontreal.className}>Resume</button>
           </div>

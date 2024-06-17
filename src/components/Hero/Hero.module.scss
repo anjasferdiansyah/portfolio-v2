@@ -17,6 +17,7 @@
     }
 
     .textWrapper {
+      font-family: var(--font-neueMontreal);
       position: relative;
       margin-top: 18rem;
       display: flex;
@@ -44,6 +45,7 @@
         line-height: 3rem;
       }
       p:nth-last-child(1) {
+        font-family: var(--font-inter);
         font-size: 1.5rem;
         width: 50%;
         @media screen and (max-width: 768px) {
@@ -55,7 +57,10 @@
       display: flex;
       margin-top: 2rem;
       justify-content: space-between;
-      gap: 1rem;
+      .wrapper {
+        display: flex;
+        gap: 1rem;
+      }
       button {
         background-color: transparent;
         border: 1px solid black;

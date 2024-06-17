@@ -1,0 +1,50 @@
+.experiences {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-radius: 50px 50px 0 0;
+  margin-top: -4rem;
+  .container {
+    h1 {
+      font-weight: 400;
+      border-bottom: 1px solid #c7c7c7;
+      padding: 2rem 0;
+    }
+    padding: 4rem var(--spacing-1);
+    .wrapper {
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #d8d8d6;
+      border: 1px solid #c7c7c7;
+      border-radius: 0.5rem;
+
+      .experiencesHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+          display: flex;
+          gap: 1rem;
+          h3 {
+            font-weight: 400;
+          }
+          span {
+            width: 10px;
+            display: block;
+            height: 10px;
+            margin: auto;
+            border-radius: 50%;
+            background-color: black;
+          }
+        }
+        .date {
+          font-weight: 400;
+        }
+      }
+      .experiencesDescription {
+        padding-top: 2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

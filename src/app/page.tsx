@@ -7,6 +7,8 @@ import Cursor from "@/components/Cursor";
 import { useEffect, useRef, useState } from "react";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Experiences from "@/components/Experiences";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const stickyElement = useRef(null);
@@ -38,6 +40,8 @@ export default function Home() {
       <main>
         <Hero ref={textWrapper} />
         <About />
+        <Experiences />
+        <Projects />
       </main>
     </>
   );

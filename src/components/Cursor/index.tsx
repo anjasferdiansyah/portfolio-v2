@@ -9,9 +9,10 @@ import {
 } from "framer-motion";
 
 export default function Cursor({ stickyElement, textWrapper }: any) {
+  console.log(stickyElement.current);
+
   const [isHovered, setIsHovered] = useState(false);
   const [isTextHovered, setIsTextHovered] = useState(false);
-  console.log(isHovered);
 
   let cursorSize;
 
@@ -53,35 +54,16 @@ export default function Cursor({ stickyElement, textWrapper }: any) {
 
   useEffect(() => {
     window.addEventListener("mousemove", manageMouseMove);
-    stickyElement.current.addEventListener("mouseover", () =>
-      setIsHovered(true)
-    );
-    stickyElement.current.addEventListener("mouseleave", () =>
-      setIsHovered(false)
-    );
+
+    const sticky = stickyElement.current;
+    sticky?.addEventListener("mouseover", () => setIsHovered(true));
+    sticky?.addEventListener("mouseleave", () => setIsHovered(false));
     textWrapper.current.addEventListener("mouseover", () =>
       setIsTextHovered(true)
     );
     textWrapper.current.addEventListener("mouseleave", () =>
       setIsTextHovered(false)
     );
-
-    return () => {
-      window.removeEventListener("mousemove", manageMouseMove);
-      stickyElement.current?.removeEventListener("mouseover", () =>
-        setIsHovered(true)
-      );
-      stickyElement.current?.removeEventListener("mouseleave", () =>
-        setIsHovered(false)
-      );
-
-      textWrapper.current?.removeEventListener("mouseover", () =>
-        setIsTextHovered(true)
-      );
-      textWrapper.current?.removeEventListener("mouseleave", () =>
-        setIsTextHovered(false)
-      );
-    };
   });
 
   return (
