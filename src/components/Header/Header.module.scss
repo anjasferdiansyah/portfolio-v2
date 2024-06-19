@@ -1,6 +1,6 @@
 .header {
-  position: fixed;
   background-color: black;
+  position: fixed;
   top: 0;
   left: 0;
   height: 6rem;
@@ -9,8 +9,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 4rem;
+  z-index: 97;
   mix-blend-mode: difference;
-  z-index: 10;
 
   @media screen and (max-width: 768px) {
     padding: 0 2rem;
@@ -25,21 +25,26 @@
   .menu {
     position: relative;
     display: flex;
+    mix-blend-mode: difference;
+    color: white;
     gap: 8px;
     flex-direction: column;
     padding: 30px;
-    z-index: 10;
     &::before,
     &::after {
       display: block;
       content: "";
       width: 30px;
       height: 2px;
-      mix-blend-mode: difference;
       background-color: white;
       pointer-events: none;
+      z-index: 20;
+      position: relative;
+      transition: 0.3s;
     }
+
     .boundary {
+      mix-blend-mode: difference;
       width: 100%;
       height: 100%;
       position: absolute;
@@ -50,6 +55,47 @@
       &:hover {
         transform: scale(3);
       }
+    }
+  }
+  .menuActive {
+    &::after {
+      transform: rotate(45deg);
+
+      top: -5px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+
+      top: 5px;
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0%;
+  height: 100vh;
+  z-index: 10;
+  background-color: #0d0d0d;
+  mix-blend-mode: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 10rem;
+  transition: all 0.3s;
+  .navLinks {
+    li {
+      list-style: none;
+    }
+    a {
+      color: white;
+      font-size: 20px;
+      font-weight: 400;
+      font-family: var(--font-neueMontreal);
+      text-decoration: none;
     }
   }
 }

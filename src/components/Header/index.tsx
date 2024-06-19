@@ -1,7 +1,8 @@
 "use client";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import style from "@/components/Header/Header.module.scss";
-import { ForwardRefComponent } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { menuSlide } from "@/utils/animate";
 
 const links = [
   {
@@ -23,16 +24,48 @@ const links = [
   },
 ];
 
-const Header = forwardRef(function index(props, ref: any) {
+const Header = forwardRef(function Index(props, ref: any) {
+  const [isActive, setIsActive] = useState(false);
+
+  console.log(isActive);
+
   return (
-    <header className={style.header}>
-      <div className={style.logo}>
-        <h1>Anjas.</h1>
-      </div>
-      <div ref={ref} className={style.menu}>
-        <div className={style.boundary}></div>
-      </div>
-    </header>
+    <>
+      <header className={style.header}>
+        <div className={style.logo}>
+          <h1>Anjas.</h1>
+        </div>
+        <div
+          ref={ref}
+          className={`${style.menu} ${isActive ? style.menuActive : ""}`}
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
+          <div className={style.boundary}></div>
+        </div>
+      </header>
+
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.div
+            variants={menuSlide}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className={`${style.nav}`}
+          >
+            <ul className={style.navLinks}>
+              {links.map((link) => (
+                <li key={link.name}>
+                  <a href={link.url}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 });
 

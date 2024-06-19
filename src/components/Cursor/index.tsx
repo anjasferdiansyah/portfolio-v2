@@ -9,8 +9,6 @@ import {
 } from "framer-motion";
 
 export default function Cursor({ stickyElement, textWrapper }: any) {
-  console.log(stickyElement.current);
-
   const [isHovered, setIsHovered] = useState(false);
   const [isTextHovered, setIsTextHovered] = useState(false);
 
@@ -41,11 +39,10 @@ export default function Cursor({ stickyElement, textWrapper }: any) {
       stickyElement.current.getBoundingClientRect();
 
     const center = { x: left + width / 2, y: top + height / 2 };
-    const distance: any = { x: clientX - center.x, y: clientY - center.y };
 
     if (isHovered && stickyElement.current) {
-      mouse.x.set(center.x - cursorSize / 2 + distance.x * 0.1);
-      mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
+      mouse.x.set(center.x - cursorSize / 2);
+      mouse.y.set(center.y - cursorSize / 2);
     } else {
       mouse.x.set(clientX - cursorSize / 2);
       mouse.y.set(clientY - cursorSize / 2);

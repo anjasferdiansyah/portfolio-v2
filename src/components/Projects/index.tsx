@@ -1,57 +1,69 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import style from "./Projects.module.scss";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import projectImage1_1 from "@/assets/project1-1.png";
 import projectImage1_2 from "@/assets/project1-2.png";
 import projectImage1_3 from "@/assets/project1-3.png";
+import projectImage2_1 from "@/assets/project2-1.png";
+import projectImage2_2 from "@/assets/project2-2.png";
+import projectImage2_3 from "@/assets/project2-3.png";
+import projectImage3_1 from "@/assets/project3-1.png";
+import projectImage3_2 from "@/assets/project3-2.png";
+import ProjectCard from "../ProjectCard";
 
-const listProjects = {
-  
+interface Project {
+  name: string;
+  year: string;
+  desc: string;
+  tech: string[];
+  image: StaticImageData[];
 }
 
+const listProjects: Project[] = [
+  {
+    name: "Seven E Commerce",
+    year: "2024",
+    desc: "Colaborated with group 7 in harisenin.com bootcamp to develop an e-commerce app which inspired by another e-commerce named protest.eu.",
+    tech: ["React", "TailwindCSS", "ExpressJS", "Sequelize", "Postgres"],
+    image: [projectImage1_1, projectImage1_2, projectImage1_3],
+  },
+  {
+    name: "Tinker",
+    year: "2023",
+    desc: "Tinker is a web application that allows users to create, edit, and delete their own posts.",
+    tech: ["NextJS", "TailwindCSS", "Prisma", "Postgres"],
+    image: [projectImage2_1, projectImage2_2, projectImage2_3],
+  },
+  {
+    name: "Recipe App",
+    year: "2023",
+    desc: "Recipe app is a platform that users can search for recipes around the world. This project uses external API.",
+    tech: ["React", "TailwindCSS", "Redux", "React-Router"],
+    image: [projectImage3_1, projectImage3_2],
+  },
+];
+
 const Projects = () => {
+  const [openProjectIndex, setOpenProjectIndex] = useState<number | null>(null);
+
+  const handleProjectClick = (index: number) => {
+    setOpenProjectIndex(openProjectIndex === index ? null : index);
+  };
+
   return (
     <div className={style.projects}>
       <div className={style.container}>
         <h1>Projects</h1>
-        <div className={style.wrapper}>
-          <div className={style.projectHeader}>
-            <h2>Seven E Commerce</h2>
-            <p>2024</p>
-          </div>
-          <div className={style.projectBody}>
-            <p>
-              Colaborated with group 7 in harisenin.com bootcamp to develop an e
-              commerce app which inspired by another e-commerce named
-              protest.eu.
-            </p>
-            <ul className={style.technologies}>
-              <li>React</li>
-              <li>TailwindCSS</li>
-              <li>ExpressJS</li>
-              <li>Sequelize</li>
-              <li>Postgres</li>
-            </ul>
-            <button>See Website</button>
-            <div className={style.projectWrapper}>
-              <Image
-                src={projectImage1_1}
-                className={style.projectImage}
-                alt="projectImage1_1"
-              />
-              <Image
-                src={projectImage1_2}
-                className={style.projectImage}
-                alt="projectImage1_2"
-              />
-              <Image
-                src={projectImage1_3}
-                className={style.projectImage}
-                alt="projectImage1_3"
-              />
-            </div>
-          </div>
-          <div></div>
+        <div>
+          {listProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              data={project}
+              isOpen={openProjectIndex === index}
+              onClick={() => handleProjectClick(index)}
+            />
+          ))}
         </div>
       </div>
     </div>
