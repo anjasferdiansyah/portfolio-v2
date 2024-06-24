@@ -8,8 +8,6 @@ import toast from "react-hot-toast";
 const SubmitButton = () => {
   const { pending } = useFormStatus();
 
-  console.log(pending);
-
   return (
     <button type="submit" disabled={pending} className={style.submit}>
       {pending ? <div className={style.spinner}></div> : "Send"}
@@ -48,7 +46,7 @@ const Footer = () => {
             </div>
             <div className={style.phone}>
               <p>Phone</p>
-              <p>+62 812 3456 7890</p>
+              <p>+62 813 2852 8954</p>
             </div>
           </div>
         </div>
