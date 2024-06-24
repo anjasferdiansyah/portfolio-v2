@@ -2,9 +2,12 @@
   width: 100%;
   background-color: #0d0d0d;
   color: #f2f2f2;
-  border-radius: 50px 50px 0 0;
   .container {
-    padding: 2rem var(--spacing-1);
+    padding: 4rem var(--spacing-1);
+
+    @media screen and (max-width: 768px) {
+      padding: 4rem 2rem;
+    }
     h1 {
       font-weight: 400;
       padding: 2rem 0;

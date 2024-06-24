@@ -1,0 +1,108 @@
+.footer {
+  width: 100%;
+  background-color: white;
+  color: black;
+
+  .container {
+    padding: 2rem var(--spacing-1);
+    display: flex;
+    gap: 2rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 4rem 2rem;
+      flex-direction: column;
+    }
+    .contactWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h1 {
+        font-weight: 400;
+        font-family: var(--font-neueMontreal);
+        font-size: 2rem;
+        padding: 1rem 0;
+      }
+      .socials {
+        display: flex;
+        gap: 1rem;
+        padding: 2rem 0;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .contact {
+        .email {
+          padding: 1rem 0;
+          p:nth-child(1) {
+            color: gray;
+          }
+        }
+
+        .phone {
+          p:nth-child(1) {
+            color: gray;
+          }
+        }
+      }
+    }
+    .formWrapper {
+      width: 100%;
+      h1 {
+        font-weight: 400;
+        font-family: var(--font-neueMontreal);
+        font-size: 2rem;
+        padding: 1rem 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .inputWrapper {
+          display: flex;
+          flex-direction: column;
+          input {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-bottom: 1px solid black;
+            width: 100%;
+          }
+        }
+        .submit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          border: none;
+          background-color: black;
+          font-size: 1rem;
+          color: white;
+          cursor: pointer;
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.9;
+          }
+          .spinner {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            border-top: 2px solid black;
+            animation: spin 1s linear infinite;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

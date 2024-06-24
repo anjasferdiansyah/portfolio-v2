@@ -6,9 +6,10 @@ import Header from "@/components/Header";
 import Cursor from "@/components/Cursor";
 import { useEffect, useRef, useState } from "react";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import Experiences from "@/components/Experiences";
 import Projects from "@/components/Projects";
+import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const stickyElement = useRef(null);
@@ -36,12 +37,14 @@ export default function Home() {
       {isMobile && (
         <Cursor stickyElement={stickyElement} textWrapper={textWrapper} />
       )}
+      <Toaster />
       <Header ref={stickyElement} />
       <main>
         <Hero ref={textWrapper} />
         <About />
         <Experiences />
         <Projects />
+        <Footer />
       </main>
     </>
   );

@@ -27,8 +27,6 @@ const links = [
 const Header = forwardRef(function Index(props, ref: any) {
   const [isActive, setIsActive] = useState(false);
 
-  console.log(isActive);
-
   return (
     <>
       <header className={style.header}>

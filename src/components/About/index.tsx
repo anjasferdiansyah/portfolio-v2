@@ -2,11 +2,11 @@ import React from "react";
 import style from "./About.module.scss";
 import Image from "next/image";
 import aboutImage from "@/assets/aboutImage.png";
-import Skills from "../Skills";
+import Skills from "@/components/Skills";
 
 const About = () => {
   return (
-    <div className={style.about}>
+    <div id="about" className={style.about}>
       <div className={style.container}>
         <h1 className={style.title}>About me</h1>
         <h1>A Passionate Fullstack Developer</h1>

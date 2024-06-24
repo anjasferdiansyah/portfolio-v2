@@ -5,7 +5,7 @@ import harisenin from "../../assets/harisenin.png";
 
 const Experiences = () => {
   return (
-    <div className={style.experiences}>
+    <div id="experiences" className={style.experiences}>
       <div className={style.container}>
         <h1>My Experiences</h1>
         <div className={style.wrapper}>
@@ -13,7 +13,6 @@ const Experiences = () => {
           <div className={style.experiencesHeader}>
             <div className={style.title}>
               <h3>Harisenin.com</h3>
-              <span></span>
               <h3>Fullstack Developer Student</h3>
             </div>
             <h3 className={style.date}>DECEMBER 2023 - PRESENT, REMOTE</h3>
